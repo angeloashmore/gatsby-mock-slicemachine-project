@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"build": "gatsby build",
-		"sm": "start-slicemachine --port 9999",
+		"sm": "start-slicemachine",
 		"develop": "gatsby develop",
 		"gen": "graphql-codegen --config graphql-codegen.yml",
 		"format": "prettier --write .",

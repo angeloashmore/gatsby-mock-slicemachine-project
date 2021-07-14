@@ -1,0 +1,43 @@
+{
+	"scripts": {
+		"build": "gatsby build",
+		"sm": "start-slicemachine --port 9999",
+		"develop": "gatsby develop",
+		"gen": "graphql-codegen --config graphql-codegen.yml",
+		"format": "prettier --write .",
+		"start": "gatsby develop",
+		"serve": "gatsby serve",
+		"clean": "gatsby clean",
+		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+	},
+	"dependencies": {
+		"@themosaad/tailwindcss-capsize": "^1.0.0",
+		"autoprefixer": "^10.2.6",
+		"gatsby": "^3.9.1",
+		"gatsby-plugin-image": "^1.9.0",
+		"gatsby-plugin-postcss": "^4.9.0",
+		"gatsby-plugin-prismic-previews": "^4.0.0-beta.22",
+		"gatsby-plugin-react-helmet-async": "^1.2.0",
+		"gatsby-source-prismic": "^4.0.0-slice-machine.0",
+		"postcss": "^8.2.6",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"tailwindcss": "^2.2.4"
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "^1.21.6",
+		"@graphql-codegen/typescript": "^1.22.4",
+		"@graphql-codegen/typescript-operations": "^1.18.3",
+		"@typescript-eslint/eslint-plugin": "^4.28.2",
+		"@typescript-eslint/parser": "^4.28.2",
+		"dotenv": "^8.6.0",
+		"eslint": "^7.30.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-prettier": "^3.4.0",
+		"eslint-plugin-react": "^7.24.0",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"prettier": "^2.3.2",
+		"typescript": "^4.3.5"
+	}
+}

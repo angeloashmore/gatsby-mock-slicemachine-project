@@ -1,0 +1,77 @@
+{
+	"id": "call_to_action",
+	"type": "SharedSlice",
+	"name": "CallToAction",
+	"description": "Persuade a user to perform an action.",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default Slice",
+			"docURL": "...",
+			"version": "sktwi1xtmkfgx8626",
+			"description": "Hero Slice",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"single": "heading1",
+						"label": "Title",
+						"placeholder": "This is where it all begins..."
+					}
+				},
+				"description": {
+					"type": "StructuredText",
+					"config": {
+						"single": "paragraph",
+						"label": "Description",
+						"placeholder": "A nice description of your product"
+					}
+				}
+			},
+			"items": {}
+		},
+		{
+			"id": "withButton",
+			"name": "With Button",
+			"docURL": "...",
+			"version": "sktwi1xtmkfgx8626",
+			"description": "Hero Slice",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"single": "heading1",
+						"label": "Title",
+						"placeholder": "This is where it all begins..."
+					}
+				},
+				"description": {
+					"type": "StructuredText",
+					"config": {
+						"single": "paragraph",
+						"label": "Description",
+						"placeholder": "A nice description of your product"
+					}
+				},
+				"buttonLink": {
+					"config": {
+						"label": "Button Link",
+						"placeholder": "Optional - Link for the button link",
+						"allowTargetBlank": true
+					},
+					"type": "Link"
+				},
+				"buttonText": {
+					"config": {
+						"label": "Button Text",
+						"placeholder": "Optional - Text for the button link",
+						"allowTargetBlank": true,
+						"single": "paragraph"
+					},
+					"type": "StructuredText"
+				}
+			},
+			"items": {}
+		}
+	]
+}

@@ -8,7 +8,9 @@
 		"start": "gatsby develop",
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",
-		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
 	},
 	"dependencies": {
 		"@themosaad/tailwindcss-capsize": "^1.0.0",
@@ -25,11 +27,17 @@
 		"tailwindcss": "^2.2.4"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.14.6",
 		"@graphql-codegen/cli": "^1.21.6",
 		"@graphql-codegen/typescript": "^1.22.4",
 		"@graphql-codegen/typescript-operations": "^1.18.3",
+		"@storybook/addon-actions": "^6.3.4",
+		"@storybook/addon-essentials": "^6.3.4",
+		"@storybook/addon-links": "^6.3.4",
+		"@storybook/react": "^6.3.4",
 		"@typescript-eslint/eslint-plugin": "^4.28.2",
 		"@typescript-eslint/parser": "^4.28.2",
+		"babel-loader": "^8.2.2",
 		"dotenv": "^8.6.0",
 		"eslint": "^7.30.0",
 		"eslint-config-prettier": "^8.3.0",

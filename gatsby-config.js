@@ -13,7 +13,10 @@ module.exports = {
 				repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
 				accessToken: process.env.PRISMIC_ACCESS_TOKEN,
 				customTypeModels: [require("./customtypes/page/index.json")],
-				sharedSliceModels: [require("./src/slices/CallToAction/model.json")],
+				sharedSliceModels: [
+					require("./src/slices/CallToAction/model.json"),
+					require("./src/slices/Hero/model.json"),
+				],
 				linkResolver: require("./src/linkResolver").linkResolver,
 			},
 		},

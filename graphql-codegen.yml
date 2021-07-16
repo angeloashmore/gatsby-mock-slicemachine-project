@@ -23,7 +23,7 @@ generates:
       - typescript-operations
     config:
       skipTypename: true
-      maybeValue: T | undefined
+      avoidOptionals: true
       scalars:
         Date: string
         JSON: unknown

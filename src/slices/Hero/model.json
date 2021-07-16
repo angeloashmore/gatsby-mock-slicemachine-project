@@ -1,42 +1,15 @@
 {
-  "id": "call_to_action",
+  "id": "hero",
   "type": "SharedSlice",
-  "name": "CallToAction",
-  "description": "Persuade a user to perform an action.",
+  "name": "Hero",
+  "description": "Hero",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "Hero Slice",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "A nice description of your product",
-            "allowTargetBlank": true,
-            "single": "paragraph"
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "withButton",
-      "name": "With Button",
-      "docURL": "...",
-      "version": "sktwi1xtmkfgx8626",
-      "description": "Hero Slice",
+      "description": "Hero",
       "primary": {
         "title": {
           "type": "StructuredText",
@@ -51,25 +24,42 @@
           "config": {
             "single": "paragraph",
             "label": "Description",
-            "placeholder": "A nice description of your product"
+            "placeholder": "A nice description of your feature"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "withBackground",
+      "name": "With Background",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Hero",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
           }
         },
-        "buttonLink": {
+        "description": {
+          "type": "StructuredText",
           "config": {
-            "label": "Button Link",
-            "placeholder": "Optional - Link for the button link",
-            "allowTargetBlank": true
-          },
-          "type": "Link"
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your feature"
+          }
         },
-        "buttonText": {
+        "backgroundImage": {
           "config": {
-            "label": "Button Text",
-            "placeholder": "Optional - Text for the button link",
-            "allowTargetBlank": true,
-            "single": "paragraph"
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
           },
-          "type": "StructuredText"
+          "type": "Image"
         }
       },
       "items": {}

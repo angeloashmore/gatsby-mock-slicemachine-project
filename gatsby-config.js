@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
 	siteMetadata: {
-		title: "Ableton",
+		title: "Mock Slice Machine Project",
 	},
 	plugins: [
 		"gatsby-plugin-react-helmet-async",
@@ -12,6 +12,7 @@ module.exports = {
 			options: {
 				repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
 				accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+				// TODO: Automatically load these files.
 				customTypeModels: [require("./customtypes/page/index.json")],
 				sharedSliceModels: [
 					require("./src/slices/CallToAction/model.json"),

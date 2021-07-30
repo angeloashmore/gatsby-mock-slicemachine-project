@@ -2,18 +2,11 @@
 
 import loadable from "@loadable/component";
 import { graphql } from "gatsby";
-import { SliceComponentProps } from "@prismicio/react";
 
-import { CallToActionProps } from "./CallToAction";
-import { HeroProps } from "./Hero";
+import { HeroSlice } from "./Hero/types";
+import { CallToActionSlice } from "./CallToAction/types";
 
-type SliceFromSliceComponentProps<T> = T extends SliceComponentProps<infer U>
-	? U
-	: T;
-
-export type PrismicPageDataBodySlice =
-	| SliceFromSliceComponentProps<CallToActionProps>
-	| SliceFromSliceComponentProps<HeroProps>;
+export type PrismicPageDataBodySlice = HeroSlice | CallToActionSlice;
 
 export const prismicPageDataBodyComponents = {
 	hero: loadable(async () => (await import("./Hero")).Hero),

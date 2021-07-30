@@ -6,7 +6,6 @@ module.exports = {
 	},
 	plugins: [
 		"gatsby-plugin-react-helmet-async",
-		"gatsby-plugin-postcss",
 		"gatsby-plugin-loadable-components-ssr",
 		{
 			resolve: "gatsby-source-prismic",

@@ -3,16 +3,57 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import { HeroProps } from "./types";
+import { HeroSliceComponentProps } from "./types";
 
-export { HeroProps };
+export type HeroProps = {
+	variation: HeroSliceComponentProps["slice"]["variation"];
+	title?: string;
+	description?: string;
+	backroundUrl?: string;
+};
 
 // TODO: Implement the Hero component.
 //
 // → Learn how to render this component with <SliceZone>
 //   https://prismic.io/docs/technologies/template-slices-gatsby
-export const Hero = ({ slice }: HeroProps): JSX.Element => {
-	return <section>Placeholder Hero component - {slice.variation}</section>;
+export const Hero = ({
+	title,
+	description,
+	backroundUrl,
+}: HeroProps): JSX.Element => {
+	return (
+		<section
+			style={{
+				backgroundImage: backroundUrl ? `url('${backroundUrl}')` : undefined,
+			}}
+		>
+			{title && <h1>{title}</h1>}
+			{description && <p>{description}</p>}
+		</section>
+	);
+};
+
+export const mapSliceToProps = ({
+	slice,
+}: HeroSliceComponentProps): HeroProps => {
+	switch (slice.variation) {
+		case "default": {
+			return {
+				variation: slice.variation,
+				title: slice.primary.title?.text,
+				description: slice.primary.description?.text,
+			};
+		}
+
+		case "withBackground": {
+			return {
+				variation: slice.variation,
+				title: slice.primary.title?.text,
+				description: slice.primary.description?.text,
+				backroundUrl: slice.primary.backgroundImage?.url,
+			};
+		}
+	}
 };
 
 // TODO: Create a GraphQL fragment for each Slice variation.

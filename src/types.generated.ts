@@ -1,4 +1,4 @@
-export type Maybe<T> = T | null;
+export type Maybe<T> = T | undefined;
 export type Exact<T extends { [key: string]: unknown }> = {
 	[K in keyof T]: T[K];
 };
@@ -1592,7 +1592,7 @@ export enum PrismicLinkTypeEnum {
 
 export type PrismicPage = Node & {
 	uid: Scalars["String"];
-	data: PrismicPageDataType;
+	data: Maybe<PrismicPageDataType>;
 	dataRaw: Scalars["JSON"];
 	prismicId: Scalars["ID"];
 	alternate_languages: Array<PrismicAlternateLanguageType>;
@@ -1841,7 +1841,6 @@ export type PrismicStructuredTextType = {
 };
 
 export type PrismicTypePathType = Node & {
-	kind: Scalars["String"];
 	path: Array<Scalars["String"]>;
 	type: Scalars["String"];
 	id: Scalars["ID"];
@@ -1891,7 +1890,6 @@ export type PrismicTypePathTypeEdge = {
 };
 
 export enum PrismicTypePathTypeFieldsEnum {
-	Kind = "kind",
 	Path = "path",
 	Type = "type",
 	Id = "id",
@@ -1983,7 +1981,6 @@ export enum PrismicTypePathTypeFieldsEnum {
 }
 
 export type PrismicTypePathTypeFilterInput = {
-	kind: Maybe<StringQueryOperatorInput>;
 	path: Maybe<StringQueryOperatorInput>;
 	type: Maybe<StringQueryOperatorInput>;
 	id: Maybe<StringQueryOperatorInput>;
@@ -2198,7 +2195,6 @@ export type QueryAllPrismicEmbedTypeArgs = {
 };
 
 export type QueryPrismicTypePathTypeArgs = {
-	kind: Maybe<StringQueryOperatorInput>;
 	path: Maybe<StringQueryOperatorInput>;
 	type: Maybe<StringQueryOperatorInput>;
 	id: Maybe<StringQueryOperatorInput>;
@@ -3017,20 +3013,6 @@ export enum SitePageFieldsEnum {
 	PluginCreatorVersion = "pluginCreator___version",
 	PluginCreatorPluginOptionsRepositoryName = "pluginCreator___pluginOptions___repositoryName",
 	PluginCreatorPluginOptionsAccessToken = "pluginCreator___pluginOptions___accessToken",
-	PluginCreatorPluginOptionsPromptForAccessToken = "pluginCreator___pluginOptions___promptForAccessToken",
-	PluginCreatorPluginOptionsApiEndpoint = "pluginCreator___pluginOptions___apiEndpoint",
-	PluginCreatorPluginOptionsLang = "pluginCreator___pluginOptions___lang",
-	PluginCreatorPluginOptionsImageImgixParamsAuto = "pluginCreator___pluginOptions___imageImgixParams___auto",
-	PluginCreatorPluginOptionsImageImgixParamsFit = "pluginCreator___pluginOptions___imageImgixParams___fit",
-	PluginCreatorPluginOptionsImageImgixParamsQ = "pluginCreator___pluginOptions___imageImgixParams___q",
-	PluginCreatorPluginOptionsImagePlaceholderImgixParamsW = "pluginCreator___pluginOptions___imagePlaceholderImgixParams___w",
-	PluginCreatorPluginOptionsImagePlaceholderImgixParamsBlur = "pluginCreator___pluginOptions___imagePlaceholderImgixParams___blur",
-	PluginCreatorPluginOptionsToolbar = "pluginCreator___pluginOptions___toolbar",
-	PluginCreatorPluginOptionsPath = "pluginCreator___pluginOptions___path",
-	PluginCreatorPluginOptionsPathCheck = "pluginCreator___pluginOptions___pathCheck",
-	PluginCreatorPluginOptionsAllExtensions = "pluginCreator___pluginOptions___allExtensions",
-	PluginCreatorPluginOptionsIsTsx = "pluginCreator___pluginOptions___isTSX",
-	PluginCreatorPluginOptionsJsxPragma = "pluginCreator___pluginOptions___jsxPragma",
 	PluginCreatorPluginOptionsCustomTypeModels = "pluginCreator___pluginOptions___customTypeModels",
 	PluginCreatorPluginOptionsCustomTypeModelsId = "pluginCreator___pluginOptions___customTypeModels___id",
 	PluginCreatorPluginOptionsCustomTypeModelsLabel = "pluginCreator___pluginOptions___customTypeModels___label",
@@ -3041,6 +3023,20 @@ export enum SitePageFieldsEnum {
 	PluginCreatorPluginOptionsSharedSliceModelsName = "pluginCreator___pluginOptions___sharedSliceModels___name",
 	PluginCreatorPluginOptionsSharedSliceModelsDescription = "pluginCreator___pluginOptions___sharedSliceModels___description",
 	PluginCreatorPluginOptionsSharedSliceModelsVariations = "pluginCreator___pluginOptions___sharedSliceModels___variations",
+	PluginCreatorPluginOptionsApiEndpoint = "pluginCreator___pluginOptions___apiEndpoint",
+	PluginCreatorPluginOptionsLang = "pluginCreator___pluginOptions___lang",
+	PluginCreatorPluginOptionsImageImgixParamsAuto = "pluginCreator___pluginOptions___imageImgixParams___auto",
+	PluginCreatorPluginOptionsImageImgixParamsFit = "pluginCreator___pluginOptions___imageImgixParams___fit",
+	PluginCreatorPluginOptionsImageImgixParamsQ = "pluginCreator___pluginOptions___imageImgixParams___q",
+	PluginCreatorPluginOptionsImagePlaceholderImgixParamsW = "pluginCreator___pluginOptions___imagePlaceholderImgixParams___w",
+	PluginCreatorPluginOptionsImagePlaceholderImgixParamsBlur = "pluginCreator___pluginOptions___imagePlaceholderImgixParams___blur",
+	PluginCreatorPluginOptionsPromptForAccessToken = "pluginCreator___pluginOptions___promptForAccessToken",
+	PluginCreatorPluginOptionsToolbar = "pluginCreator___pluginOptions___toolbar",
+	PluginCreatorPluginOptionsPath = "pluginCreator___pluginOptions___path",
+	PluginCreatorPluginOptionsPathCheck = "pluginCreator___pluginOptions___pathCheck",
+	PluginCreatorPluginOptionsAllExtensions = "pluginCreator___pluginOptions___allExtensions",
+	PluginCreatorPluginOptionsIsTsx = "pluginCreator___pluginOptions___isTSX",
+	PluginCreatorPluginOptionsJsxPragma = "pluginCreator___pluginOptions___jsxPragma",
 	PluginCreatorNodeApIs = "pluginCreator___nodeAPIs",
 	PluginCreatorBrowserApIs = "pluginCreator___browserAPIs",
 	PluginCreatorSsrApIs = "pluginCreator___ssrAPIs",
@@ -3049,7 +3045,6 @@ export enum SitePageFieldsEnum {
 	PluginCreatorPackageJsonDescription = "pluginCreator___packageJson___description",
 	PluginCreatorPackageJsonVersion = "pluginCreator___packageJson___version",
 	PluginCreatorPackageJsonMain = "pluginCreator___packageJson___main",
-	PluginCreatorPackageJsonAuthor = "pluginCreator___packageJson___author",
 	PluginCreatorPackageJsonLicense = "pluginCreator___packageJson___license",
 	PluginCreatorPackageJsonDependencies = "pluginCreator___packageJson___dependencies",
 	PluginCreatorPackageJsonDependenciesName = "pluginCreator___packageJson___dependencies___name",
@@ -3242,20 +3237,6 @@ export enum SitePluginFieldsEnum {
 	Version = "version",
 	PluginOptionsRepositoryName = "pluginOptions___repositoryName",
 	PluginOptionsAccessToken = "pluginOptions___accessToken",
-	PluginOptionsPromptForAccessToken = "pluginOptions___promptForAccessToken",
-	PluginOptionsApiEndpoint = "pluginOptions___apiEndpoint",
-	PluginOptionsLang = "pluginOptions___lang",
-	PluginOptionsImageImgixParamsAuto = "pluginOptions___imageImgixParams___auto",
-	PluginOptionsImageImgixParamsFit = "pluginOptions___imageImgixParams___fit",
-	PluginOptionsImageImgixParamsQ = "pluginOptions___imageImgixParams___q",
-	PluginOptionsImagePlaceholderImgixParamsW = "pluginOptions___imagePlaceholderImgixParams___w",
-	PluginOptionsImagePlaceholderImgixParamsBlur = "pluginOptions___imagePlaceholderImgixParams___blur",
-	PluginOptionsToolbar = "pluginOptions___toolbar",
-	PluginOptionsPath = "pluginOptions___path",
-	PluginOptionsPathCheck = "pluginOptions___pathCheck",
-	PluginOptionsAllExtensions = "pluginOptions___allExtensions",
-	PluginOptionsIsTsx = "pluginOptions___isTSX",
-	PluginOptionsJsxPragma = "pluginOptions___jsxPragma",
 	PluginOptionsCustomTypeModels = "pluginOptions___customTypeModels",
 	PluginOptionsCustomTypeModelsId = "pluginOptions___customTypeModels___id",
 	PluginOptionsCustomTypeModelsLabel = "pluginOptions___customTypeModels___label",
@@ -3271,6 +3252,20 @@ export enum SitePluginFieldsEnum {
 	PluginOptionsSharedSliceModelsVariationsDocUrl = "pluginOptions___sharedSliceModels___variations___docURL",
 	PluginOptionsSharedSliceModelsVariationsVersion = "pluginOptions___sharedSliceModels___variations___version",
 	PluginOptionsSharedSliceModelsVariationsDescription = "pluginOptions___sharedSliceModels___variations___description",
+	PluginOptionsApiEndpoint = "pluginOptions___apiEndpoint",
+	PluginOptionsLang = "pluginOptions___lang",
+	PluginOptionsImageImgixParamsAuto = "pluginOptions___imageImgixParams___auto",
+	PluginOptionsImageImgixParamsFit = "pluginOptions___imageImgixParams___fit",
+	PluginOptionsImageImgixParamsQ = "pluginOptions___imageImgixParams___q",
+	PluginOptionsImagePlaceholderImgixParamsW = "pluginOptions___imagePlaceholderImgixParams___w",
+	PluginOptionsImagePlaceholderImgixParamsBlur = "pluginOptions___imagePlaceholderImgixParams___blur",
+	PluginOptionsPromptForAccessToken = "pluginOptions___promptForAccessToken",
+	PluginOptionsToolbar = "pluginOptions___toolbar",
+	PluginOptionsPath = "pluginOptions___path",
+	PluginOptionsPathCheck = "pluginOptions___pathCheck",
+	PluginOptionsAllExtensions = "pluginOptions___allExtensions",
+	PluginOptionsIsTsx = "pluginOptions___isTSX",
+	PluginOptionsJsxPragma = "pluginOptions___jsxPragma",
 	NodeApIs = "nodeAPIs",
 	BrowserApIs = "browserAPIs",
 	SsrApIs = "ssrAPIs",
@@ -3279,7 +3274,6 @@ export enum SitePluginFieldsEnum {
 	PackageJsonDescription = "packageJson___description",
 	PackageJsonVersion = "packageJson___version",
 	PackageJsonMain = "packageJson___main",
-	PackageJsonAuthor = "packageJson___author",
 	PackageJsonLicense = "packageJson___license",
 	PackageJsonDependencies = "packageJson___dependencies",
 	PackageJsonDependenciesName = "packageJson___dependencies___name",
@@ -3323,7 +3317,6 @@ export type SitePluginPackageJson = {
 	description: Maybe<Scalars["String"]>;
 	version: Maybe<Scalars["String"]>;
 	main: Maybe<Scalars["String"]>;
-	author: Maybe<Scalars["String"]>;
 	license: Maybe<Scalars["String"]>;
 	dependencies: Maybe<Array<Maybe<SitePluginPackageJsonDependencies>>>;
 	devDependencies: Maybe<Array<Maybe<SitePluginPackageJsonDevDependencies>>>;
@@ -3364,7 +3357,6 @@ export type SitePluginPackageJsonFilterInput = {
 	description: Maybe<StringQueryOperatorInput>;
 	version: Maybe<StringQueryOperatorInput>;
 	main: Maybe<StringQueryOperatorInput>;
-	author: Maybe<StringQueryOperatorInput>;
 	license: Maybe<StringQueryOperatorInput>;
 	dependencies: Maybe<SitePluginPackageJsonDependenciesFilterListInput>;
 	devDependencies: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>;
@@ -3389,23 +3381,23 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 export type SitePluginPluginOptions = {
 	repositoryName: Maybe<Scalars["String"]>;
 	accessToken: Maybe<Scalars["String"]>;
-	promptForAccessToken: Maybe<Scalars["Boolean"]>;
-	apiEndpoint: Maybe<Scalars["String"]>;
-	lang: Maybe<Scalars["String"]>;
-	imageImgixParams: Maybe<SitePluginPluginOptionsImageImgixParams>;
-	imagePlaceholderImgixParams: Maybe<SitePluginPluginOptionsImagePlaceholderImgixParams>;
-	toolbar: Maybe<Scalars["String"]>;
-	path: Maybe<Scalars["String"]>;
-	pathCheck: Maybe<Scalars["Boolean"]>;
-	allExtensions: Maybe<Scalars["Boolean"]>;
-	isTSX: Maybe<Scalars["Boolean"]>;
-	jsxPragma: Maybe<Scalars["String"]>;
 	customTypeModels: Maybe<
 		Array<Maybe<SitePluginPluginOptionsCustomTypeModels>>
 	>;
 	sharedSliceModels: Maybe<
 		Array<Maybe<SitePluginPluginOptionsSharedSliceModels>>
 	>;
+	apiEndpoint: Maybe<Scalars["String"]>;
+	lang: Maybe<Scalars["String"]>;
+	imageImgixParams: Maybe<SitePluginPluginOptionsImageImgixParams>;
+	imagePlaceholderImgixParams: Maybe<SitePluginPluginOptionsImagePlaceholderImgixParams>;
+	promptForAccessToken: Maybe<Scalars["Boolean"]>;
+	toolbar: Maybe<Scalars["String"]>;
+	path: Maybe<Scalars["String"]>;
+	pathCheck: Maybe<Scalars["Boolean"]>;
+	allExtensions: Maybe<Scalars["Boolean"]>;
+	isTSX: Maybe<Scalars["Boolean"]>;
+	jsxPragma: Maybe<Scalars["String"]>;
 };
 
 export type SitePluginPluginOptionsCustomTypeModels = {
@@ -3520,19 +3512,19 @@ export type SitePluginPluginOptionsCustomTypeModelsJsonPageUidFilterInput = {
 export type SitePluginPluginOptionsFilterInput = {
 	repositoryName: Maybe<StringQueryOperatorInput>;
 	accessToken: Maybe<StringQueryOperatorInput>;
-	promptForAccessToken: Maybe<BooleanQueryOperatorInput>;
+	customTypeModels: Maybe<SitePluginPluginOptionsCustomTypeModelsFilterListInput>;
+	sharedSliceModels: Maybe<SitePluginPluginOptionsSharedSliceModelsFilterListInput>;
 	apiEndpoint: Maybe<StringQueryOperatorInput>;
 	lang: Maybe<StringQueryOperatorInput>;
 	imageImgixParams: Maybe<SitePluginPluginOptionsImageImgixParamsFilterInput>;
 	imagePlaceholderImgixParams: Maybe<SitePluginPluginOptionsImagePlaceholderImgixParamsFilterInput>;
+	promptForAccessToken: Maybe<BooleanQueryOperatorInput>;
 	toolbar: Maybe<StringQueryOperatorInput>;
 	path: Maybe<StringQueryOperatorInput>;
 	pathCheck: Maybe<BooleanQueryOperatorInput>;
 	allExtensions: Maybe<BooleanQueryOperatorInput>;
 	isTSX: Maybe<BooleanQueryOperatorInput>;
 	jsxPragma: Maybe<StringQueryOperatorInput>;
-	customTypeModels: Maybe<SitePluginPluginOptionsCustomTypeModelsFilterListInput>;
-	sharedSliceModels: Maybe<SitePluginPluginOptionsSharedSliceModelsFilterListInput>;
 };
 
 export type SitePluginPluginOptionsImageImgixParams = {
@@ -3815,16 +3807,92 @@ export type PrismicPageTemplateQueryVariables = Exact<{
 export type PrismicPageTemplateQuery = {
 	prismicPage: Maybe<
 		Pick<PrismicPage, "_previewable"> & {
-			data: {
+			data: Maybe<{
 				body: Array<
 					| PrismicPageDataBody_PrismicCallToActionDefault_Fragment
 					| PrismicPageDataBody_PrismicCallToActionWithButton_Fragment
 					| PrismicPageDataBody_PrismicHeroDefault_Fragment
 					| PrismicPageDataBody_PrismicHeroWithBackground_Fragment
 				>;
-			};
+			}>;
 		}
 	>;
+};
+
+type PrismicCallToAction_PrismicCallToActionDefault_Fragment =
+	PrismicCallToActionDefaultFragment;
+
+type PrismicCallToAction_PrismicCallToActionWithButton_Fragment =
+	PrismicCallToActionWithButtonFragment;
+
+type PrismicCallToAction_PrismicHeroDefault_Fragment = {};
+
+type PrismicCallToAction_PrismicHeroWithBackground_Fragment = {};
+
+export type PrismicCallToActionFragment =
+	| PrismicCallToAction_PrismicCallToActionDefault_Fragment
+	| PrismicCallToAction_PrismicCallToActionWithButton_Fragment
+	| PrismicCallToAction_PrismicHeroDefault_Fragment
+	| PrismicCallToAction_PrismicHeroWithBackground_Fragment;
+
+export type PrismicCallToActionDefaultFragment = Pick<
+	PrismicCallToActionDefault,
+	"slice_type" | "variation"
+> & {
+	primary: {
+		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
+		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
+	};
+};
+
+export type PrismicCallToActionWithButtonFragment = Pick<
+	PrismicCallToActionWithButton,
+	"slice_type" | "variation"
+> & {
+	primary: {
+		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
+		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
+		buttonText: Maybe<Pick<PrismicStructuredTextType, "text">>;
+		buttonLink: Maybe<Pick<PrismicLinkType, "url" | "target">>;
+	};
+};
+
+type PrismicHero_PrismicCallToActionDefault_Fragment = {};
+
+type PrismicHero_PrismicCallToActionWithButton_Fragment = {};
+
+type PrismicHero_PrismicHeroDefault_Fragment = PrismicHeroDefaultFragment;
+
+type PrismicHero_PrismicHeroWithBackground_Fragment =
+	PrismicHeroWithBackgroundFragment;
+
+export type PrismicHeroFragment =
+	| PrismicHero_PrismicCallToActionDefault_Fragment
+	| PrismicHero_PrismicCallToActionWithButton_Fragment
+	| PrismicHero_PrismicHeroDefault_Fragment
+	| PrismicHero_PrismicHeroWithBackground_Fragment;
+
+export type PrismicHeroDefaultFragment = Pick<
+	PrismicHeroDefault,
+	"slice_type"
+> & {
+	primary: {
+		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
+		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
+	};
+};
+
+export type PrismicHeroWithBackgroundFragment = Pick<
+	PrismicHeroWithBackground,
+	"slice_type"
+> & {
+	primary: {
+		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
+		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
+		backgroundImage: Maybe<
+			Pick<PrismicHeroWithBackgroundPrimaryBackgroundImageImageType, "url">
+		>;
+	};
 };
 
 type PrismicPageDataBody_PrismicCallToActionDefault_Fragment = Pick<
@@ -3860,67 +3928,3 @@ export type PrismicPageDataBodyFragment =
 	| PrismicPageDataBody_PrismicCallToActionWithButton_Fragment
 	| PrismicPageDataBody_PrismicHeroDefault_Fragment
 	| PrismicPageDataBody_PrismicHeroWithBackground_Fragment;
-
-type PrismicCallToAction_PrismicCallToActionDefault_Fragment =
-	PrismicCallToActionDefaultFragment;
-
-type PrismicCallToAction_PrismicCallToActionWithButton_Fragment =
-	PrismicCallToActionWithButtonFragment;
-
-type PrismicCallToAction_PrismicHeroDefault_Fragment = {};
-
-type PrismicCallToAction_PrismicHeroWithBackground_Fragment = {};
-
-export type PrismicCallToActionFragment =
-	| PrismicCallToAction_PrismicCallToActionDefault_Fragment
-	| PrismicCallToAction_PrismicCallToActionWithButton_Fragment
-	| PrismicCallToAction_PrismicHeroDefault_Fragment
-	| PrismicCallToAction_PrismicHeroWithBackground_Fragment;
-
-export type PrismicCallToActionDefaultFragment = {
-	primary: {
-		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
-		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
-	};
-};
-
-export type PrismicCallToActionWithButtonFragment = {
-	primary: {
-		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
-		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
-		buttonText: Maybe<Pick<PrismicStructuredTextType, "text">>;
-		buttonLink: Maybe<Pick<PrismicLinkType, "url" | "target">>;
-	};
-};
-
-type PrismicHero_PrismicCallToActionDefault_Fragment = {};
-
-type PrismicHero_PrismicCallToActionWithButton_Fragment = {};
-
-type PrismicHero_PrismicHeroDefault_Fragment = PrismicHeroDefaultFragment;
-
-type PrismicHero_PrismicHeroWithBackground_Fragment =
-	PrismicHeroWithBackgroundFragment;
-
-export type PrismicHeroFragment =
-	| PrismicHero_PrismicCallToActionDefault_Fragment
-	| PrismicHero_PrismicCallToActionWithButton_Fragment
-	| PrismicHero_PrismicHeroDefault_Fragment
-	| PrismicHero_PrismicHeroWithBackground_Fragment;
-
-export type PrismicHeroDefaultFragment = {
-	primary: {
-		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
-		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
-	};
-};
-
-export type PrismicHeroWithBackgroundFragment = {
-	primary: {
-		title: Maybe<Pick<PrismicStructuredTextType, "text">>;
-		description: Maybe<Pick<PrismicStructuredTextType, "text">>;
-		backgroundImage: Maybe<
-			Pick<PrismicHeroWithBackgroundPrimaryBackgroundImageImageType, "url">
-		>;
-	};
-};

@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 
 import { CallToActionProps } from "./types";
 
-export { CallToActionProps };
+export type { CallToActionProps };
 
 // TODO: Implement the CallToAction component.
 //

@@ -24,6 +24,7 @@ generates:
     config:
       skipTypename: true
       avoidOptionals: true
+      maybeValue: T | undefined
       scalars:
         Date: string
         JSON: unknown

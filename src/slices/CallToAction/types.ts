@@ -7,9 +7,9 @@ import {
 	PrismicCallToActionWithButtonFragment,
 } from "../../types.generated";
 
-export type CallToActionProps = SliceComponentProps<
-	{ slice_type: "call_to_action" } & (
-		| ({ variation: "default" } & PrismicCallToActionDefaultFragment)
-		| ({ variation: "withButton" } & PrismicCallToActionWithButtonFragment)
-	)
->;
+export type CallToActionSlice = { slice_type: "call_to_action" } & (
+	| ({ variation: "default" } & PrismicCallToActionDefaultFragment)
+	| ({ variation: "withButton" } & PrismicCallToActionWithButtonFragment)
+);
+
+export type CallToActionProps = SliceComponentProps<CallToActionSlice>;

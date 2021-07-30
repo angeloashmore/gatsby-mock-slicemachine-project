@@ -5,13 +5,13 @@ import { graphql } from "gatsby";
 
 import { CallToActionProps } from "./types";
 
-// TODO: Implement the CallToActionSlice component.
+export { CallToActionProps };
+
+// TODO: Implement the CallToAction component.
 //
 // → Learn how to render this component with <SliceZone>
 //   https://prismic.io/docs/technologies/template-slices-gatsby
-export const CallToActionSlice = ({
-	slice,
-}: CallToActionProps): JSX.Element => {
+export const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
 	return (
 		<section>Placeholder CallToAction component - {slice.variation}</section>
 	);
@@ -24,7 +24,7 @@ export const CallToActionSlice = ({
 //
 // → Learn how to use this GraphQL fragment
 //   https://prismic.io/docs/technologies/fragments-gatsby
-export const fragment = graphql`
+export const fragments = graphql`
 	fragment PrismicCallToActionDefault on PrismicCallToActionDefault {
 		slice_type
 		variation

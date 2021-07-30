@@ -5,11 +5,13 @@ import { graphql } from "gatsby";
 
 import { HeroProps } from "./types";
 
-// TODO: Implement the CallToActionSlice component.
+export { HeroProps };
+
+// TODO: Implement the Hero component.
 //
 // → Learn how to render this component with <SliceZone>
 //   https://prismic.io/docs/technologies/template-slices-gatsby
-export const HeroSlice = ({ slice }: HeroProps): JSX.Element => {
+export const Hero = ({ slice }: HeroProps): JSX.Element => {
 	return <section>Placeholder Hero component - {slice.variation}</section>;
 };
 
@@ -20,7 +22,7 @@ export const HeroSlice = ({ slice }: HeroProps): JSX.Element => {
 //
 // → Learn how to use this GraphQL fragment
 //   https://prismic.io/docs/technologies/fragments-gatsby
-export const fragment = graphql`
+export const fragments = graphql`
 	fragment PrismicHeroDefault on PrismicHeroDefault {
 		slice_type
 		primary {

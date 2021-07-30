@@ -13,11 +13,13 @@
 		"build-storybook": "build-storybook"
 	},
 	"dependencies": {
+		"@loadable/component": "^5.15.0",
 		"@prismicio/react": "file:../prismic-reactjs",
 		"@themosaad/tailwindcss-capsize": "^1.0.0",
 		"autoprefixer": "^10.3.1",
 		"gatsby": "^3.10.1",
 		"gatsby-plugin-image": "^1.10.1",
+		"gatsby-plugin-loadable-components-ssr": "^3.2.0",
 		"gatsby-plugin-postcss": "^4.10.0",
 		"gatsby-plugin-prismic-previews": "^4.0.1",
 		"gatsby-plugin-react-helmet-async": "^1.2.0",
@@ -39,6 +41,7 @@
 		"@storybook/builder-webpack5": "^6.4.0-alpha.19",
 		"@storybook/manager-webpack5": "^6.4.0-alpha.19",
 		"@storybook/react": "^6.3.5",
+		"@types/loadable__component": "^5.13.4",
 		"@typescript-eslint/eslint-plugin": "^4.28.4",
 		"@typescript-eslint/parser": "^4.28.4",
 		"babel-loader": "^8.2.2",

@@ -10,11 +10,19 @@ import {
 	PrismicPageDataBodySlice,
 } from "../slices";
 
-type PrismicPageTemplateProps = PageProps<PrismicPageTemplateQuery>;
+type PrismicPageTemplateProps = PageProps<
+	PrismicPageTemplateQuery,
+	{ id: string }
+>;
 
 const PrismicPageTemplate = (props: PrismicPageTemplateProps): JSX.Element => {
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	const prismicPage = props.data.prismicPage!;
+	const prismicPage = props.data.prismicPage;
+	if (!prismicPage) {
+		throw new Error(
+			`Could not find a PrismicPage with ID: ${props.pageContext.id}`,
+		);
+	}
+
 	const prismicPageDataBodySlices = prismicPage.data
 		.body as PrismicPageDataBodySlice[];
 

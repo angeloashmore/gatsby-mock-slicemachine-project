@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"repositoryName": "qwerty",
+	"libraries": ["./src/slices"],
+	"customTypes": ["./src/customTypes"],
+	"storybookURL": "http://localhost:6006",
+	"plugins": [
+		{
+			"resolve": "slicemachine-plugin-gatsby",
+			"options": {
+				"withTypeScript": true
+			}
+		}
+	]
+}

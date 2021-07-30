@@ -1,6 +1,0 @@
-{
-	"_latest": "0.1.0",
-	"apiEndpoint": "https://ableton-demo.cdn.prismic.io/api/v2",
-	"libraries": ["@/src/slices"],
-	"storybook": "http://localhost:6006"
-}

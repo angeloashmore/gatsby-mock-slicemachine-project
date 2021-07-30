@@ -1592,7 +1592,7 @@ export enum PrismicLinkTypeEnum {
 
 export type PrismicPage = Node & {
 	uid: Scalars["String"];
-	data: Maybe<PrismicPageDataType>;
+	data: PrismicPageDataType;
 	dataRaw: Scalars["JSON"];
 	prismicId: Scalars["ID"];
 	alternate_languages: Array<PrismicAlternateLanguageType>;
@@ -3807,14 +3807,14 @@ export type PrismicPageTemplateQueryVariables = Exact<{
 export type PrismicPageTemplateQuery = {
 	prismicPage: Maybe<
 		Pick<PrismicPage, "_previewable"> & {
-			data: Maybe<{
+			data: {
 				body: Array<
 					| PrismicPageDataBody_PrismicCallToActionDefault_Fragment
 					| PrismicPageDataBody_PrismicCallToActionWithButton_Fragment
 					| PrismicPageDataBody_PrismicHeroDefault_Fragment
 					| PrismicPageDataBody_PrismicHeroWithBackground_Fragment
 				>;
-			}>;
+			};
 		}
 	>;
 };

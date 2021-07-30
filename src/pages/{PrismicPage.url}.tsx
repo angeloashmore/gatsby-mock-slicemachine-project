@@ -14,12 +14,13 @@ type PrismicPageTemplateProps = PageProps<PrismicPageTemplateQuery>;
 
 const PrismicPageTemplate = (props: PrismicPageTemplateProps): JSX.Element => {
 	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	const page = props.data.prismicPage!;
-	const pageDataBodySlices = page.data.body as PrismicPageDataBodySlice[];
+	const prismicPage = props.data.prismicPage!;
+	const prismicPageDataBodySlices = prismicPage.data
+		.body as PrismicPageDataBodySlice[];
 
 	return (
 		<SliceZone
-			slices={pageDataBodySlices}
+			slices={prismicPageDataBodySlices}
 			components={prismicPageDataBodyComponents}
 		/>
 	);

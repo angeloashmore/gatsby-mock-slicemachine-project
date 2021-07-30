@@ -1,5 +1,7 @@
 const path = require("path");
 
+// This line is required for Storybook but will not be used for Gatsby.
+// It can be left commented out.
 // const { getStoriesPaths } = require('slice-machine-ui/helpers/storybook')
 
 module.exports = {
@@ -22,6 +24,6 @@ module.exports = {
 				},
 			},
 		},
-		path.resolve("./.storybook/addon-gatsby.js"),
+		"storybook-addon-gatsby",
 	],
 };

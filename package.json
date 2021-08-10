@@ -9,8 +9,10 @@
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",
 		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"storybook": "NODE_ENV=test start-storybook --quiet -s public -p 6006",
+		"build-storybook": "build-storybook",
+		"prestorybook": "npm run _copy-static-queries",
+		"_copy-static-queries": "cp -r ./public/page-data/sq/d ./public/static"
 	},
 	"dependencies": {
 		"@loadable/component": "^5.15.0",
@@ -26,16 +28,16 @@
 		"react-dom": "^17.0.2"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.14.8",
+		"@babel/core": "^7.15.0",
 		"@graphql-codegen/cli": "^1.21.7",
 		"@graphql-codegen/typescript": "^1.23.0",
 		"@graphql-codegen/typescript-operations": "^1.18.4",
-		"@storybook/addon-actions": "^6.3.5",
-		"@storybook/addon-essentials": "^6.3.5",
-		"@storybook/addon-links": "^6.3.5",
+		"@storybook/addon-actions": "^6.3.7",
+		"@storybook/addon-essentials": "^6.3.7",
+		"@storybook/addon-links": "^6.3.7",
 		"@storybook/builder-webpack5": "^6.4.0-alpha.19",
 		"@storybook/manager-webpack5": "^6.4.0-alpha.19",
-		"@storybook/react": "^6.3.5",
+		"@storybook/react": "^6.3.7",
 		"@types/loadable__component": "^5.13.4",
 		"@typescript-eslint/eslint-plugin": "^4.28.4",
 		"@typescript-eslint/parser": "^4.28.4",

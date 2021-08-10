@@ -13,7 +13,7 @@ module.exports = {
 				repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
 				accessToken: process.env.PRISMIC_ACCESS_TOKEN,
 				// TODO: Automatically load these files.
-				customTypeModels: [require("./customtypes/page/index.json")],
+				customTypeModels: [require("./src/customtypes/page/index.json")],
 				sharedSliceModels: [
 					require("./src/slices/CallToAction/model.json"),
 					require("./src/slices/Hero/model.json"),

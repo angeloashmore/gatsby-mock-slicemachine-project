@@ -66,6 +66,7 @@ export const mapSliceToProps = ({
 export const fragments = graphql`
 	fragment PrismicHeroDefault on PrismicHeroDefault {
 		slice_type
+		variation
 		primary {
 			title {
 				text
@@ -77,6 +78,7 @@ export const fragments = graphql`
 	}
 	fragment PrismicHeroWithBackground on PrismicHeroWithBackground {
 		slice_type
+		variation
 		primary {
 			title {
 				text

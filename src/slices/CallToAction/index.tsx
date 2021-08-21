@@ -13,7 +13,9 @@ export type { CallToActionProps };
 //   https://prismic.io/docs/technologies/template-slices-gatsby
 export const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
 	return (
-		<section>Placeholder CallToAction component - {slice.variation}</section>
+		<div>
+			<section>Placeholder CallToAction component - {slice.variation}</section>
+		</div>
 	);
 };
 

@@ -25,8 +25,8 @@ export const DefaultVariation = {
 export const WithButtonVariation = {
 	render: (args: unknown): JSX.Element => (
 		<CallToAction
-			slice={mocks.withButton}
-			slices={[mocks.withButton]}
+			slice={mocks.withButtonVariation}
+			slices={[mocks.withButtonVariation]}
 			index={0}
 			context={{}}
 			{...args}

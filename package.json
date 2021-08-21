@@ -17,13 +17,14 @@
 	"dependencies": {
 		"@loadable/component": "^5.15.0",
 		"@prismicio/react": "file:../prismic-reactjs",
+		"@prismicio/types": "file:../prismic-types",
 		"autoprefixer": "^10.3.1",
 		"gatsby": "^3.10.1",
 		"gatsby-plugin-image": "^1.10.1",
 		"gatsby-plugin-loadable-components-ssr": "^3.2.0",
 		"gatsby-plugin-prismic-previews": "^4.0.1",
 		"gatsby-plugin-react-helmet-async": "^1.2.0",
-		"gatsby-source-prismic": "file:../gatsby-source-prismic/packages/gatsby-source-prismic",
+		"gatsby-source-prismic": "file:../prismic-gatsby/packages/gatsby-source-prismic",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
 	},
@@ -32,6 +33,7 @@
 		"@graphql-codegen/cli": "^1.21.7",
 		"@graphql-codegen/typescript": "^1.23.0",
 		"@graphql-codegen/typescript-operations": "^1.18.4",
+		"@prismicio/mock": "file:../prismic-mock",
 		"@storybook/addon-actions": "^6.3.7",
 		"@storybook/addon-essentials": "^6.3.7",
 		"@storybook/addon-links": "^6.3.7",
